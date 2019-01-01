@@ -10,4 +10,5 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
 </view>
