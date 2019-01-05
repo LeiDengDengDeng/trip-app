@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
+    "pages/spot/spot",
     "pages/schedule/schedule",
     "pages/team/team",
     "pages/user/user"
@@ -16,7 +15,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/spot/spot",
         "text": "首页",
         "iconPath": "utils/imgs/fengche.png",
         "selectedIconPath": "utils/imgs/fengche-2.png"

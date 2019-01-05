@@ -1,0 +1,81 @@
+/* pages/spot/spot.wxss */
+
+page {
+  background-color: #f2f3f4;
+}
+
+.card {
+  margin: 15px;
+  height: 250rpx;
+  border: 1rpx solid #dddee1;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.card .spot-image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  flex-shrink: 0; /* 不被压缩 */
+}
+
+.card .right {
+  margin: 25rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .right .row {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  color: #353535;
+}
+
+.card .right .row .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card .right .row .end {
+  font-size: 13px;
+  margin-left: auto;
+  text-align: right;
+  color: #353535;
+}
+
+.card .right .description {
+  font-size: 13px;
+  color: #888;
+}
+
+.card .right .row .score {
+  color: #f4c23c;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1000160 */
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot');
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 18px;
+  padding-top: 5rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-more::before {
+  content: "\e670";
+}
