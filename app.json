@@ -1,24 +1,45 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/schedule/schedule",
+    "pages/team/team",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#f4c23c",
+    "navigationBarTitleText": "协同出游",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "utils/imgs/fengche.png",
+        "selectedIconPath": "utils/imgs/fengche-2.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/team/team",
+        "text": "出行",
+        "iconPath": "utils/imgs/fanshe.png",
+        "selectedIconPath": "utils/imgs/fanshe-2.png"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "text": "行程",
+        "iconPath": "utils/imgs/qizi.png",
+        "selectedIconPath": "utils/imgs/qizi-2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "utils/imgs/icon_zhanghao.png",
+        "selectedIconPath": "utils/imgs/icon_zhanghao-2.png"
       }
-    ]
+    ],
+    "selectedColor": "#f4c23c"
   }
 }
