@@ -1,2 +1,114 @@
 <!--pages/team/team.wxml-->
-<text>pages/team/team.wxml</text>
+<i-panel title="热门推荐" class="panel">
+  <view class="panel-view">
+    <i-row>
+      <i-col span="8" i-class="col-class">
+        <view class="card">
+          <view bindtap="onItemClick">
+            <image class="image" mode="aspectFill" src="https://dimg04.c-ctrip.com/images/tg/907/145/270/e0f1b915a9cf441ab241549f07821960_R_1024_10000_Q90.jpg" />
+            <view class="content">
+              <text class="head">上海一日游 </text>
+              <text class="time">1月4日</text>
+            </view>
+            <view class="content">
+              <i-row>
+                <i-col span="8" i-class="col-class">
+                  <text>简介 : </text>
+                </i-col>
+                <i-col span="16" i-class="col-class">
+                  <text>野生动物园+博物馆</text>
+                </i-col>
+              </i-row>
+            </view>
+            <view class="content">
+              <text>预计人均 : </text>
+              <text class="money">¥ 200 </text>
+            </view>
+            <view>
+              <text class="content">队伍 :  </text>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+            </view>
+          </view>
+        </view>
+      </i-col>
+      <i-col span="8" i-class="col-class">
+        <view class="card">
+          <view bindtap="onItemClick">
+            <image class="image" mode="aspectFill" src="https://dimg05.c-ctrip.com/images/tg/346/795/571/ea57d54c2cd44a34ab0a0ddf71a7071e_R_1024_10000_Q90.jpg" />
+            <view class="content">
+              <text class="head">上海一日游 </text>
+              <text class="time">1月4日</text>
+            </view>
+            <view class="content">
+              <i-row>
+                <i-col span="8" i-class="col-class">
+                  <text>简介 : </text>
+                </i-col>
+                <i-col span="16" i-class="col-class">
+                  <text>野生动物园+博物馆</text>
+                </i-col>
+              </i-row>
+            </view>
+            <view class="content">
+              <text>预计人均 : </text>
+              <text class="money">¥ 200 </text>
+            </view>
+            <view>
+              <text class="content">队伍 :  </text>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+            </view>
+          </view>
+        </view>
+      </i-col>
+      <i-col span="8" i-class="col-class">
+        <view class="card">
+          <view bindtap="onItemClick">
+            <image class="image" mode="aspectFill" src="https://dimg05.c-ctrip.com/images/tg/213/629/552/75d73af2da08485884f6d1fdc2365ef6_R_1024_10000_Q90.jpg" />
+            <view class="content">
+              <text class="head">上海一日游 </text>
+              <text class="time">1月4日</text>
+            </view>
+            <view class="content">
+              <i-row>
+                <i-col span="8" i-class="col-class">
+                  <text>简介 : </text>
+                </i-col>
+                <i-col span="16" i-class="col-class">
+                  <text>野生动物园+博物馆</text>
+                </i-col>
+              </i-row>
+            </view>
+            <view class="content">
+              <text>预计人均 : </text>
+              <text class="money">¥ 200 </text>
+            </view>
+            <view>
+              <text class="content">队伍 :  </text>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+              <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+            </view>
+          </view>
+        </view>
+      </i-col>
+    </i-row>
+  </view>
+</i-panel>
+<i-panel title="出行队伍" class="panel">
+  <view class="card2">
+    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+    <view class='right'>
+      <view class='row'>
+        <view class='title'>橘子洲</view>
+        <view class='end'>玄武区</view>
+      </view>
+      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
+      <view class='row'>
+        <text class='score'>4.7</text>
+        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
+        <text class="iconfont icon-more end"></text>
+      </view>
+    </view>
+  </view>
+  </i-panel>

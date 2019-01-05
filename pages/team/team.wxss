@@ -1,1 +1,121 @@
-/* pages/team/team.wxss */
+.card {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 2px 1px 1px #ccc;
+  margin: 2px;
+  position: relative;
+}
+
+.image {
+  border-radius: 5px 5px 0 0;
+  width: 98%;
+  height: 110px;
+  background-color: #eee;
+}
+
+.content {
+  margin-top: 3px;
+  color: #5f5e5e;
+  right: 0;
+  top: 0;
+  font-size: 11px;
+}
+
+.head {
+  color: #0a0a0a;
+  font-size: 13px;
+}
+
+.panel {
+  text-align: center;
+}
+
+.time {
+  color: #5f5e5e;
+  font-size: 9px;
+  text-align: right;
+}
+.money{
+  color:#f4c23c;
+  font-size: 11px;
+}
+.panel-view {
+  text-align: left;
+  padding:4px;
+}
+.card2 {
+  margin: 8px;
+  height: 250rpx;
+  border: 1rpx solid #dddee1;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.card2 .spot-image {
+  margin:5px;
+  width: 245rpx;
+  height: 230rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  flex-shrink: 0; /* 不被压缩 */
+}
+
+.card2 .right {
+  margin: 25rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card2 .right .row {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  color: #353535;
+}
+
+.card2 .right .row .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card2 .right .row .end {
+  font-size: 13px;
+  margin-left: auto;
+  text-align: right;
+  color: #353535;
+}
+
+.card2 .right .description {
+  font-size: 13px;
+  color: #888;
+}
+
+.card2 .right .row .score {
+  color: #f4c23c;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1000160 */
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot');
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 18px;
+  padding-top: 5rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-more::before {
+  content: "\e670";
+}

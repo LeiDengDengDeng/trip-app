@@ -3,7 +3,8 @@
     "pages/spot/spot",
     "pages/schedule/schedule",
     "pages/team/team",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
