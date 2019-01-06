@@ -1,16 +1,41 @@
 <!--pages/spot/spot.wxml-->
-<view class="card">
-  <image class="spot-image" src="../../utils/imgs/spot.jpg" />
-  <view class='right'>
-    <view class='row'>
-      <view class='title'>橘子洲</view>
-      <view class='end'>玄武区</view>
+<i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
+  <i-tab key="tab1" title="景点"></i-tab>
+  <i-tab key="tab2" title="娱乐"></i-tab>
+  <i-tab key="tab3" title="电影"></i-tab>
+  <i-tab key="tab4" title="美食"></i-tab>
+</i-tabs>
+
+<block>
+  <navigator class="card" url="./spotDetail" open-type="navigate">
+    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+    <view class='right'>
+      <view class='row'>
+        <view class='title'>橘子洲</view>
+        <view class='end'>玄武区</view>
+      </view>
+      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
+      <view class='row'>
+        <text class='score'>4.7</text>
+        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
+        <text class="iconfont icon-more end"></text>
+      </view>
     </view>
-    <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
-    <view class='row'>
-      <text class='score'>4.7</text>
-      <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
-      <text class="iconfont icon-more end"></text>
+  </navigator>
+
+  <view class="card">
+    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+    <view class='right'>
+      <view class='row'>
+        <view class='title'>橘子洲</view>
+        <view class='end'>玄武区</view>
+      </view>
+      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
+      <view class='row'>
+        <text class='score'>4.7</text>
+        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
+        <text class="iconfont icon-more end"></text>
+      </view>
     </view>
   </view>
-</view>
+</block>

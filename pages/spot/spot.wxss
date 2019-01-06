@@ -5,7 +5,7 @@ page {
 }
 
 .card {
-  margin: 15px;
+  margin: 10px 15px;
   height: 250rpx;
   border: 1rpx solid #dddee1;
   border-radius: 10rpx;

@@ -1,0 +1,14 @@
+<!--pages/spot/spotDetail.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style="height:150px;">
+  <block wx:for="{{imgUrls}}" wx:key="{{item.url}}">
+    <swiper-item>
+      <navigator url="{{item.link}}" hover-class="navigator-hover">
+        <image src="{{item.url}}" class="slide-image" />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <view class='title'>阿尔罕布拉宫</view>
+  <i-rate value="5" size="14"></i-rate>
+</view>

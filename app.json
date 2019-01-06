@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/spot/spot",
+    "pages/spot/spotDetail",
     "pages/schedule/schedule",
     "pages/team/team",
     "pages/user/user",
