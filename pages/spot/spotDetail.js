@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    current: 'tab1',
+    starNum: 3,
+    emptyStarNum: 1,
+    halfStar: true,
     imgUrls: [{
       // link: '/pages/spot/spot',
       url: '/utils/imgs/1.jpeg'
@@ -75,5 +79,21 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
+
+  viewLoc: function() {
+    wx.openLocation({
+      latitude: 32.053552,
+      longitude: 118.780052,
+      scale: 14,
+      name: "南京大学鼓楼校区",
+      address: "汉口路22号"
+    })
   }
 })

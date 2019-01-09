@@ -9,6 +9,33 @@
   </block>
 </swiper>
 <view class="content">
-  <view class='title'>阿尔罕布拉宫</view>
-  <i-rate value="5" size="14"></i-rate>
+  <view class='row'>
+    <view class='title'>阿尔罕布拉宫</view>
+  </view>
+  <view class='row rate'>
+    <block wx:for='{{starNum}}'>
+      <view class="iconfont icon-iconstar"></view>
+    </block>
+    <view wx:if="{{halfStar}}" class="iconfont icon-iconstar-half"></view>
+    <block wx:for='{{emptyStarNum}}'>
+      <view class="iconfont icon-iconstar-empty"></view>
+    </block>
+    <text>5.0分</text>
+    <text>27人评</text>
+  </view>
+  <view class='row'>
+    <i-tag class="i-tags" color="green" style="margin-right:3px">好玩</i-tag>
+    <i-tag class="i-tags" color="blue" style="margin-right:3px">好看</i-tag>
+    <i-tag class="i-tags" color="yellow" style="margin-right:3px">阿尔罕布拉宫的回忆</i-tag>
+  </view>
+  <view class='row' hover-class='row-hover' bindtap="viewLoc">
+    <text class="iconfont icon-loc" decode="{{true}}" style='font-size:12px;color:#888888;'>&nbsp;&nbsp;南京市鼓楼区汉口路22号&nbsp;</text>
+    <text class="iconfont icon-right" style='color:#888888;font-weight:bold;padding-top:3rpx;'></text>
+  </view>
+
+<i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
+    <i-tab key="tab1" title="已有队伍"></i-tab>
+    <i-tab key="tab2" title="创建队伍"></i-tab>
+</i-tabs>
+
 </view>

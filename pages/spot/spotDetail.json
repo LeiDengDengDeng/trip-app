@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "i-rate": "../../dist/rate/index"
+    "i-tag": "../../dist/tag/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index"
   }
 }
