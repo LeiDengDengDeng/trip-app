@@ -9,16 +9,16 @@
     </view>
   </view>
 
-  <view class='line'>
+  <view class='line' style='justify-content: flex-start;'>
     <view>
       <view class='num'>5</view>
       <view class='title'>收藏景点</view>
     </view>
-    <view>
+    <view style='margin-left:35px;'>
       <view class='num'>2</view>
       <view class='title'>关注</view>
     </view>
-    <view>
+    <view style='margin-left:50px;'>
       <view class='num'>7</view>
       <view class='title'>粉丝</view>
     </view>
