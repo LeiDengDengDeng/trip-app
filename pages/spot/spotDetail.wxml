@@ -9,8 +9,10 @@
   </block>
 </swiper>
 <view class="content">
-  <view class='row'>
+  <view class='row' style='justify-content:space-between'>
     <view class='title'>阿尔罕布拉宫</view>
+    <view wx:if="{{isForked}}" class="iconfont icon-fork vertical-middle" bindtap='clickFork'></view>
+    <view wx:else class="iconfont icon-unfork vertical-middle" bindtap='clickFork'></view>
   </view>
   <view class='row rate'>
     <block wx:for='{{starNum}}'>
@@ -30,7 +32,7 @@
   </view>
   <view class='row' hover-class='row-hover' bindtap="viewLoc">
     <text class="iconfont icon-loc" decode="{{true}}" style='font-size:12px;color:#888888;'>&nbsp;&nbsp;南京市鼓楼区汉口路22号&nbsp;</text>
-    <text class="iconfont icon-right" style='color:#888888;font-weight:bold;padding-top:3rpx;'></text>
+    <text class="iconfont icon-right vertical-middle"></text>
   </view>
 
 <i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
@@ -39,3 +41,4 @@
 </i-tabs>
 
 </view>
+<i-message id="message" />

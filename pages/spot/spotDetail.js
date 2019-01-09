@@ -1,4 +1,5 @@
-// pages/spot/spotDetail.js
+const { $Message } = require('../../dist/base/index');
+
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     current: 'tab1',
+    isForked: false,
     starNum: 3,
     emptyStarNum: 1,
     halfStar: true,
@@ -22,7 +24,7 @@ Page({
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
     interval: 3000, //间隔时间
-    duration: 2000  //滑动时间
+    duration: 2000 //滑动时间
   },
 
   /**
@@ -81,7 +83,9 @@ Page({
 
   },
 
-  handleChange({ detail }) {
+  handleChange({
+    detail
+  }) {
     this.setData({
       current: detail.key
     });
@@ -95,5 +99,22 @@ Page({
       name: "南京大学鼓楼校区",
       address: "汉口路22号"
     })
+  },
+
+  clickFork: function() {
+    this.setData({
+      isForked: !this.data.isForked
+    });
+    if (this.data.isForked) {
+      $Message({
+        content: '收藏成功！',
+        type: 'success'
+      });
+    } else {
+      $Message({
+        content: '已取消收藏！'
+        // type: 'warning'
+      });
+    }
   }
 })
