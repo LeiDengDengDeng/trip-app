@@ -1,1 +1,47 @@
 /* pages/user/user.wxss */
+
+page {
+  background-color: #f2f3f4;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  margin: 15px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.line .name {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.line .avatar {
+  margin-top: 10px;
+  overflow: hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.line .num {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.line .title {
+  font-size: 15px;
+  color: #888888;
+}

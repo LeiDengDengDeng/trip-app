@@ -1,2 +1,33 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class='flex-column'>
+  <view class='line'>
+    <view class='name'>
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class='avatar'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+
+  <view class='line'>
+    <view>
+      <view class='num'>5</view>
+      <view class='title'>收藏景点</view>
+    </view>
+    <view>
+      <view class='num'>2</view>
+      <view class='title'>关注</view>
+    </view>
+    <view>
+      <view class='num'>7</view>
+      <view class='title'>粉丝</view>
+    </view>
+  </view>
+</view>
+
+<i-cell-group>
+    <i-cell title="姓名" value="神仙岐岐" is-link></i-cell>
+    <i-cell title="性别" value="女" is-link></i-cell>
+    <i-cell title="手机号" value="13345678900" is-link></i-cell>
+    <i-cell title="用户状态" value="审核中" is-link></i-cell>
+</i-cell-group>
