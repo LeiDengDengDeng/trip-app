@@ -1,0 +1,25 @@
+<!--pages/user/friend.wxml-->
+<i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
+  <i-tab key="tab1" title="关注"></i-tab>
+  <i-tab key="tab2" title="粉丝"></i-tab>
+  <i-tab key="tab3" title="互相关注"></i-tab>
+</i-tabs>
+
+<view class='content'>
+  <view class='line'>
+    <open-data type="userAvatarUrl" class="avator"></open-data>
+    <text class='text vertical-middle'>神仙岐岐</text>
+    <view class='vertical-middle'>
+      <button class='fork-btn vertical-middle'>互相关注</button>
+    </view>
+  </view>
+  <view class='divider'></view>
+  <view class='line'>
+    <open-data type="userAvatarUrl" class="avator"></open-data>
+    <text class='text vertical-middle'>山支大哥</text>
+    <view class='vertical-middle'>
+      <button class='fork-btn vertical-middle'>互相关注</button>
+    </view>
+  </view>
+  <view class='divider'></view>
+</view>

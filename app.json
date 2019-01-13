@@ -5,7 +5,8 @@
     "pages/schedule/schedule",
     "pages/team/team",
     "pages/user/user",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/user/friend"
   ],
   "window": {
     "backgroundTextStyle": "light",

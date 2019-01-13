@@ -14,14 +14,14 @@
       <view class='num'>5</view>
       <view class='title'>收藏景点</view>
     </view>
-    <view style='margin-left:35px;'>
+    <navigator style='margin-left:35px;' url="./friend" open-type="navigate">
       <view class='num'>2</view>
       <view class='title'>关注</view>
-    </view>
-    <view style='margin-left:50px;'>
+    </navigator>
+    <navigator style='margin-left:50px;' url="./friend" open-type="navigate">
       <view class='num'>7</view>
       <view class='title'>粉丝</view>
-    </view>
+    </navigator>
   </view>
 </view>
 

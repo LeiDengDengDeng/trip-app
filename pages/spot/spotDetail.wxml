@@ -35,10 +35,10 @@
     <text class="iconfont icon-right vertical-middle"></text>
   </view>
 
-<i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
+  <i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
     <i-tab key="tab1" title="已有队伍"></i-tab>
     <i-tab key="tab2" title="创建队伍"></i-tab>
-</i-tabs>
+  </i-tabs>
 
 </view>
 <i-message id="message" />
