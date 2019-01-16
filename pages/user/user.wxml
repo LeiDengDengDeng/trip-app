@@ -10,10 +10,10 @@
   </view>
 
   <view class='line' style='justify-content: flex-start;'>
-    <view>
+    <navigator url="./fork" open-type="navigate">
       <view class='num'>5</view>
       <view class='title'>收藏景点</view>
-    </view>
+    </navigator>
     <navigator style='margin-left:35px;' url="./friend" open-type="navigate">
       <view class='num'>2</view>
       <view class='title'>关注</view>

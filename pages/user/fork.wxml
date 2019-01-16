@@ -1,0 +1,15 @@
+<view class="card">
+  <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+  <view class='middle'>
+    <view class='row'>
+      <view class='title'>橘子洲</view>
+      <view class='loc'>玄武区</view>
+    </view>
+    <view class='row'>
+      <text class='score'>4.7</text>
+      <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
+      <text class="iconfont icon-more right"></text>
+    </view>
+  </view>
+  <view class="end iconfont icon-iconstar"></view>
+</view>
