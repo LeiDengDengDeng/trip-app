@@ -7,7 +7,8 @@
     "pages/user/user",
     "pages/index/index",
     "pages/user/friend",
-    "pages/user/fork"
+    "pages/user/fork",
+    "pages/index/right"
   ],
   "window": {
     "backgroundTextStyle": "light",
