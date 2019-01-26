@@ -1,25 +1,29 @@
 <!--pages/user/friend.wxml-->
 <i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
-  <i-tab key="tab1" title="关注"></i-tab>
-  <i-tab key="tab2" title="粉丝"></i-tab>
-  <i-tab key="tab3" title="互相关注"></i-tab>
+  <i-tab key="following" title="关注"></i-tab>
+  <i-tab key="follower" title="粉丝"></i-tab>
+  <!-- <i-tab key="double" title="互相关注"></i-tab> -->
 </i-tabs>
 
 <view class='content'>
-  <view class='line'>
-    <open-data type="userAvatarUrl" class="avator"></open-data>
-    <text class='text vertical-middle'>神仙岐岐</text>
-    <view class='vertical-middle'>
-      <button class='fork-btn vertical-middle'>互相关注</button>
-    </view>
+  <view wx:if='{{current=="following"}}' class='line'>
+    <i-icon type="search" size="28" color="#383838" />
+    <input id="search" type="text" placeholder='输入用户ID' confirm-type='search' value="{{searchInput}}" class="search-input" bindconfirm="confirm" />
   </view>
-  <view class='divider'></view>
-  <view class='line'>
-    <open-data type="userAvatarUrl" class="avator"></open-data>
-    <text class='text vertical-middle'>山支大哥</text>
-    <view class='vertical-middle'>
-      <button class='fork-btn vertical-middle'>互相关注</button>
-    </view>
-  </view>
-  <view class='divider'></view>
+
+  <text wx:if='{{list.length==0}}' class='no-record-text'>暂无记录</text>
+  <block wx:else>
+    <block wx:for='{{list}}' wx:key='{{item.id}}'>
+      <view class='line'>
+        <image src="{{item.avator}}" class="avator"></image>
+        <text class='text vertical-middle'>{{item.name}}</text>
+        <view class='vertical-middle'>
+          <button id="{{item.id}}" class='fork-btn vertical-middle' bindtap='cancelFork'>取消关注</button>
+        </view>
+      </view>
+      <view class='divider'></view>
+    </block>
+  </block>
 </view>
+
+<i-message id="message" />

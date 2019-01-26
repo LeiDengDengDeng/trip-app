@@ -52,7 +52,6 @@ Page({
         // 登录
         wx.login({
           success: res => {
-            console.log("here");
             network.GET({
               url: api.loginsession + "?appid=wx3f65bf08c8984a2d&secret=710c4b8811f2b69b383faf9a4be2d1b0&js_code=" + res.code + "&grant_type=authorization_code",
               success: res2 => {

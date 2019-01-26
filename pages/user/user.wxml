@@ -11,23 +11,24 @@
 
   <view class='line' style='justify-content: flex-start;'>
     <navigator url="./fork" open-type="navigate">
-      <view class='num'>5</view>
+      <view class='num'>{{userInfo.favoriteScenicNum}}</view>
       <view class='title'>收藏景点</view>
     </navigator>
-    <navigator style='margin-left:35px;' url="./friend" open-type="navigate">
-      <view class='num'>2</view>
+    <navigator style='margin-left:35px;' url="./friend?type=following" open-type="navigate">
+      <view class='num'>{{userInfo.followingNum}}</view>
       <view class='title'>关注</view>
     </navigator>
-    <navigator style='margin-left:50px;' url="./friend" open-type="navigate">
-      <view class='num'>7</view>
+    <navigator style='margin-left:50px;' url="./friend?type=follower" open-type="navigate">
+      <view class='num'>{{userInfo.followerNum}}</view>
       <view class='title'>粉丝</view>
     </navigator>
   </view>
 </view>
 
 <i-cell-group>
-    <i-cell title="姓名" value="神仙岐岐" is-link></i-cell>
-    <i-cell title="性别" value="女" is-link></i-cell>
-    <i-cell title="手机号" value="13345678900" is-link></i-cell>
-    <i-cell title="用户状态" value="审核中" is-link></i-cell>
+    <i-cell title="姓名" value="{{userInfo.name}}" is-link url="./userModify?type=name&value={{userInfo.name}}"></i-cell>
+    <i-cell title="性别" value="{{userInfo.gender}}" is-link url="./userModify?type=gender&value={{userInfo.gender}}"></i-cell>
+    <i-cell title="手机号" value="{{userInfo.phone}}" is-link url="./userModify?type=phone&value={{userInfo.phone}}"></i-cell>
+    <i-cell title="用户状态" value="{{userInfo.state}}" is-link></i-cell>
+    <i-cell title="注册时间" value="{{userInfo.joinDate}}"></i-cell>
 </i-cell-group>

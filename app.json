@@ -5,8 +5,9 @@
     "pages/schedule/schedule",
     "pages/team/team",
     "pages/user/user",
-    "pages/index/index",
+    "pages/user/userModify",
     "pages/user/friend",
+    "pages/index/index",
     "pages/user/fork",
     "pages/index/right"
   ],
