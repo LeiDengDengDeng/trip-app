@@ -18,7 +18,11 @@
         <image src="{{item.avator}}" class="avator"></image>
         <text class='text vertical-middle'>{{item.name}}</text>
         <view class='vertical-middle'>
-          <button id="{{item.id}}" class='fork-btn vertical-middle' bindtap='cancelFork'>取消关注</button>
+          <button wx:if='{{current=="following"}}' id="{{item.id}}" class='fork-btn vertical-middle' bindtap='cancelFork'>取消关注</button>
+          <block wx:else>
+            <button id="{{item.id}}" class='fork-btn vertical-middle' bindtap='cancelFork'>+关注</button>
+            <!-- <button id="{{item.id}}" class='fork-btn vertical-middle' disabled>互相关注</button> -->
+          </block>
         </view>
       </view>
       <view class='divider'></view>
