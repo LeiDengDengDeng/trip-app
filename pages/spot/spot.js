@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current: 'tab1'
+    current: 'tab1',
+    list: []
   },
 
   handleChange({ detail }) {
@@ -100,6 +101,28 @@ Page({
         })
       }
     })
+
+    network.GET({
+      url: api.getSpots,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.introduction.length > 20) {
+              item.introduction = item.introduction.substring(0, 20) + "……";
+            }
+          }
+          this.setData({
+            list: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
   },
 
   /**
