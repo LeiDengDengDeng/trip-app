@@ -15,7 +15,12 @@ Page({
   data: {
     searchInput: '',
     current: 'following',
-    list: []
+    list: [],
+    visible: false,
+    actions: [{
+      name: '取消关注',
+    }],
+    openFriendId: ''
   },
 
   /**
@@ -125,31 +130,7 @@ Page({
         url: api.getUser + e.detail.value,
         success: res => {
           if (res.success && res.content) {
-            network.POST({
-              url: api.followUser,
-              data: {
-                friendName: "useless",
-                friendId: res.content.id,
-                userId: app.globalData.user.id
-              },
-              success: res => {
-                if (res.success) {
-                  this.loadList();
-                  this.setData({
-                    searchInput: ''
-                  });
-                  $Message({
-                    content: '关注成功!',
-                    type: 'success'
-                  });
-                } else {
-                  $Message({
-                    content: res.message,
-                    type: 'error'
-                  });
-                }
-              }
-            });
+            this.fork(res.content.id);
           } else {
             $Message({
               content: '查无此用户！',
@@ -161,11 +142,47 @@ Page({
     }
   },
 
-  cancelFork(e) {
+  forkBtn(e) {
+    this.fork(e.target.id);
+  },
+
+  fork: function(id) {
+    network.POST({
+      url: api.followUser,
+      data: {
+        friendName: "useless",
+        friendId: id,
+        userId: app.globalData.user.id
+      },
+      success: res => {
+        if (res.success) {
+          this.loadList();
+          this.setData({
+            searchInput: ''
+          });
+          $Message({
+            content: '关注成功!',
+            type: 'success'
+          });
+        } else {
+          $Message({
+            content: res.message,
+            type: 'error'
+          });
+        }
+      }
+    });
+  },
+
+  cancelForkBtn(e) {
+    this.cancelFork(e.target.id);
+  },
+
+  cancelFork: function(id) {
     network.POST({
       url: api.cancelFollowUser,
       data: {
-        friendId: e.target.id,
+        friendId: id,
         userId: app.globalData.user.id
       },
       success: res => {
@@ -183,6 +200,32 @@ Page({
           })
         }
       }
+    });
+  },
+
+  handleOpen(e) {
+    this.setData({
+      visible: true,
+      openFriendId: e.target.id
+    });
+  },
+
+  handleCancel() {
+    this.setData({
+      visible: false
+    });
+  },
+
+  handleClickItem({
+    detail
+  }) {
+    const index = detail.index + 1;
+    if (index == 1) {
+      this.cancelFork(this.data.openFriendId);
+    }
+
+    this.setData({
+      visible: false
     });
   }
 })
