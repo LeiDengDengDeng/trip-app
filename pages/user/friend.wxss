@@ -42,6 +42,7 @@
   width: 140rpx;
   height: 65rpx;
   justify-content: center;
+  border: 2px solid;
 }
 
 .content .line .fork-btn::after {

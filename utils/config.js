@@ -9,6 +9,12 @@ module.exports = {
     getFriends: server + "/friend/",
     getFollowers: server + "/friend/followers/",
     followUser: server + "/friend",
-    cancelFollowUser: server + "/friend/delete"
+    cancelFollowUser: server + "/friend/delete",
+    uploadFile: server + "/uploadfile",
+    getSpots: server + "/scenics",
+    getSpot: server + "/scenic/",
+    forkSpot: server + "/favorite/scenic" ,
+    cancelForkSpot: server + "/favorite/scenic/delete",
+    getForkedSpots: server + "/favorite/scenic/"
   }
 }

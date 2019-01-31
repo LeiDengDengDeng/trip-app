@@ -6,6 +6,7 @@
     "pages/team/team",
     "pages/user/user",
     "pages/user/userModify",
+    "pages/user/userPicture",
     "pages/user/friend",
     "pages/index/index",
     "pages/user/fork",

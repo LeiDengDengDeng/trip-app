@@ -1,18 +1,38 @@
-// pages/user/fork.js
+const network = require("../../utils/network.js");
+const {
+  api
+} = require("../../utils/config.js");
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    network.GET({
+      url: api.getForkedSpots + app.globalData.user.id,
+      success: res => {
+        if (res.success) {
+          this.setData({
+            list: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
   },
 
   /**

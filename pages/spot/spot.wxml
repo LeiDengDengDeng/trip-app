@@ -6,36 +6,20 @@
   <i-tab key="tab4" title="美食"></i-tab>
 </i-tabs>
 
-<block>
-  <navigator class="card" url="./spotDetail" open-type="navigate">
-    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+<block wx:for="{{list}}">
+  <navigator class="card" url="./spotDetail?id={{item.id}}" open-type="navigate">
+    <image class="spot-image" src="{{item.iconUrl}}" />
     <view class='right'>
       <view class='row'>
-        <view class='title'>橘子洲</view>
+        <view class='title'>{{item.name}}</view>
         <view class='end'>玄武区</view>
       </view>
-      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
+      <view class='description'>{{item.introduction}}</view>
       <view class='row'>
-        <text class='score'>4.7</text>
-        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
+        <text class='score'>{{item.star}}</text>
+        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共{{item.commentCount}}人评分</text>
         <text class="iconfont icon-more end"></text>
       </view>
     </view>
   </navigator>
-
-  <view class="card">
-    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
-    <view class='right'>
-      <view class='row'>
-        <view class='title'>橘子洲</view>
-        <view class='end'>玄武区</view>
-      </view>
-      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
-      <view class='row'>
-        <text class='score'>4.7</text>
-        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
-        <text class="iconfont icon-more end"></text>
-      </view>
-    </view>
-  </view>
 </block>
