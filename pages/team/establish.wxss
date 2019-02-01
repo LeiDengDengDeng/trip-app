@@ -1,0 +1,17 @@
+.btn{
+  margin-top:8px;
+  width:95%;
+  font-size: 15px;
+  color: white;
+}
+.join{
+  background-color:  #f4c23c;
+}/* pages/team/establish.wxss */
+.hide {
+  display: none;
+}
+ 
+.show {
+  display: block;
+}
+

@@ -1,0 +1,17 @@
+<!--pages/team/establish.wxml-->
+<i-panel title="创建队伍">
+  <i-input value="{{ name }}" type="textarea" title="队伍名" autofocus placeholder="队伍名称" bind:change="handleChangeName"/>
+  <i-input value="{{ description }}" type="textarea" title="行程简介" placeholder="请输入行程简介(最多200字)" maxlength="200" bind:change="handleChangeIntro"/>
+  <i-input value="{{ money }}" type="number" title="人均" placeholder="请输入人均预计花费" bind:change="handleChangeMoney"/>
+  <i-input value="{{ minimumLimit }}" type="number" title="人数下限" placeholder="请输入最少人数" bind:change="handleChangeMin" />
+  <i-input value="{{ maximumLimit }}" type="number" title="人数上限" placeholder="请输入最多人数" bind:change="handleChangeMax"/>
+  <i-input id="start" value="{{ startTime }}" title="出发日期" disabled bindtap="showDatePicker" />
+  <i-input id="end" value="{{ endTime }}" title="回程日期" disabled bindtap="showDatePicker" />
+  <navigator url="./spotPick" open-type='navigate' bindtap="onItemClick">
+    <i-input value="{{ spot }}" title="景点选择" disabled placeholder="点击搜索景点" />
+    </navigator>
+</i-panel>
+<date-picker id="date-picker" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" bindcancelclick="datePickerOnCancelClick" />
+<button class="btn join" bindtap='establish'>
+  立即创建
+</button>
