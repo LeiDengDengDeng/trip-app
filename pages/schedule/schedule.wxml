@@ -1,2 +1,66 @@
-<!--pages/schedule/schedule.wxml-->
-<text>pages/schedule/schedule.wxml</text>
+<i-tabs current="{{ current }}" bindchange="handleChange" color="#f4c23c">
+  <i-tab key="tab1" title="我创建的"></i-tab>
+  <i-tab key="tab2" title="我参与的"></i-tab>
+</i-tabs>
+<block wx:for="{{list1}}">
+  <navigator class="card2 right-item {{current=='tab1'? 'active' : ''}}" url="../team/teamDetail?id={{item.id}}" open-type="navigate">
+    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+    <view class='right'>
+      <view class='row'>
+        <view class='title'>{{item.name}}</view>
+        <view class='end'>{{item.startTime}}出发</view>
+      </view>
+      <view class="description">
+        <i-row>
+          <i-col span="4" i-class="col-class">
+            <text>简介 : </text>
+          </i-col>
+          <i-col span="20" i-class="col-class">
+            <text>{{item.intro}}</text>
+          </i-col>
+        </i-row>
+      </view>
+      <view class='row'>
+        <text>人均 :  </text>
+        <text class='score'>¥ {{item.average}}</text>
+      </view>
+      <view class='row'>
+        <text decode='true'>队伍 :&nbsp;&nbsp;</text>
+        <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+        <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+        <text class="iconfont icon-more end"></text>
+      </view>
+    </view>
+  </navigator>
+</block>
+<block wx:for="{{list2}}">
+  <navigator class="card2 right-item {{current=='tab2'? 'active' : ''}}" url="../team/teamDetail?id={{item.id}}" open-type="navigate">
+    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+    <view class='right'>
+      <view class='row'>
+        <view class='title'>{{item.name}}</view>
+        <view class='end'>{{item.startTime}}出发</view>
+      </view>
+      <view class="description">
+        <i-row>
+          <i-col span="4" i-class="col-class">
+            <text>简介 : </text>
+          </i-col>
+          <i-col span="20" i-class="col-class">
+            <text>{{item.intro}}</text>
+          </i-col>
+        </i-row>
+      </view>
+      <view class='row'>
+        <text>人均 :  </text>
+        <text class='score'>¥ {{item.average}}</text>
+      </view>
+      <view class='row'>
+        <text decode='true'>队伍 :&nbsp;&nbsp;</text>
+        <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+        <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+        <text class="iconfont icon-more end"></text>
+      </view>
+    </view>
+  </navigator>
+</block>

@@ -1,18 +1,84 @@
 // pages/schedule/schedule.js
+const network = require("../../utils/network.js")
+const { api } = require("../../utils/config.js")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
+  /**
+   * 页面的初始数据
+   */
   data: {
+    list1:[],
+    list2:[],
+    current: 'tab1',
+    current_scroll: 'tab1'
+  },
 
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
+
+  handleChangeScroll({ detail }) {
+    this.setData({
+      current_scroll: detail.key
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    network.GET({
+      url: api.getMyEstablishedTeam + app.globalData.user.id,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.intro.length > 20) {
+              item.intro = item.intro.substring(0, 20) + "……";
+            }
+            var date = new Date(item.startTime * 1000);
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + 1 + '月' + date.getDay() + '日';
+          }
+          this.setData({
+            list1: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
+    network.GET({
+      url: api.getMyJoinedTeam + app.globalData.user.id,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.intro.length > 20) {
+              item.intro = item.intro.substring(0, 20) + "……";
+            }
+            var date = new Date(item.startTime * 1000);
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + 1 + '月' + date.getDay() + '日';
+          }
+          this.setData({
+            list2: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
   },
 
   /**

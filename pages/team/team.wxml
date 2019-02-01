@@ -3,7 +3,7 @@
   <view class="panel-view">
     <i-row>
       <i-col span="8" i-class="col-class">
-        <view class="card">
+        <navigator class="card" url="./teamDetail" open-type='navigate'>
           <view bindtap="onItemClick">
             <image class="image" mode="aspectFill" src="https://dimg04.c-ctrip.com/images/tg/907/145/270/e0f1b915a9cf441ab241549f07821960_R_1024_10000_Q90.jpg" />
             <view class="content">
@@ -30,7 +30,7 @@
               <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
             </view>
           </view>
-        </view>
+        </navigator>
       </i-col>
       <i-col span="8" i-class="col-class">
         <view class="card">
@@ -95,20 +95,51 @@
     </i-row>
   </view>
 </i-panel>
+<navigator url="./establish" open-type='navigate'>
+  <button class="btn">
+    <i-icon type="brush" color="#fff" /> 我来建队
+  </button>
+</navigator>
 <i-panel title="出行队伍" class="panel">
-  <view class="card2">
-    <image class="spot-image" src="../../utils/imgs/spot.jpg" />
-    <view class='right'>
-      <view class='row'>
-        <view class='title'>橘子洲</view>
-        <view class='end'>玄武区</view>
+
+  <i-tabs current="{{ current }}" bindchange="handleChange" color="#f4c23c">
+    <i-tab key="tab1" title="附近"></i-tab>
+    <i-tab key="tab2" title="博物馆"></i-tab>
+    <i-tab key="tab3" title="公园"></i-tab>
+    <i-tab key="tab4" title="周边游"></i-tab>
+    <i-tab key="tab5" title="跨省"></i-tab>
+    <i-tab key="tab6" title="动物园"></i-tab>
+  </i-tabs>
+  <block wx:for="{{list}}">
+    <navigator class="card2" url="./teamDetail?id={{item.id}}" open-type="navigate">
+      <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+      <view class='right'>
+        <view class='row'>
+          <view class='title'>{{item.name}}</view>
+          <view class='end'>{{item.startTime}}出发</view>
+        </view>
+        <view class="description">
+          <i-row>
+            <i-col span="4" i-class="col-class">
+              <text>简介 : </text>
+            </i-col>
+            <i-col span="20" i-class="col-class">
+              <text>{{item.intro}}</text>
+            </i-col>
+          </i-row>
+        </view>
+        <view class='row'>
+          <text>人均 :  </text>
+          <text class='score'>¥ {{item.average}}</text>
+        </view>
+        <view class='row'>
+          <text decode='true'>队伍 :&nbsp;&nbsp;</text>
+          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+          <text class="iconfont icon-more end"></text>
+        </view>
+
       </view>
-      <view class='description'>看万山红遍，层林尽染；漫江碧透，百舸争流……</view>
-      <view class='row'>
-        <text class='score'>4.7</text>
-        <text decode='{{true}}'>分&nbsp;&nbsp;&nbsp;共120人评分</text>
-        <text class="iconfont icon-more end"></text>
-      </view>
-    </view>
-  </view>
-  </i-panel>
+    </navigator>
+  </block>
+</i-panel>

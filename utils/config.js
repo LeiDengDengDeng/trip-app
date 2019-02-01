@@ -15,6 +15,15 @@ module.exports = {
     getSpot: server + "/scenic/",
     forkSpot: server + "/favorite/scenic" ,
     cancelForkSpot: server + "/favorite/scenic/delete",
-    getForkedSpots: server + "/favorite/scenic/"
+    getForkedSpots: server + "/favorite/scenic/",
+    establishTeam: server +"/team/establish",
+    getTeams: server +"/team/all",
+    getTeam: server +"/team/",
+    getTeamMember: server +"/team/member/",
+    getMyEstablishedTeam: server +"/team/my/established/",
+    getMyJoinedTeam: server + "/team/my/joined/",
+    joinTeam: server +"/team/join"
+
+
   }
 }

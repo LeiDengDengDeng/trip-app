@@ -1,16 +1,19 @@
 {
   "pages": [
     "pages/spot/spot",
-    "pages/spot/spotDetail",
-    "pages/schedule/schedule",
+    "pages/index/index",
     "pages/team/team",
+    "pages/team/establish",
+    "pages/team/teamDetail",
+    "pages/schedule/schedule",
+    "pages/spot/spotDetail",
     "pages/user/user",
     "pages/user/userModify",
     "pages/user/userPicture",
     "pages/user/friend",
-    "pages/index/index",
     "pages/user/fork",
-    "pages/index/right"
+    "pages/index/right",
+    "pages/team/spotPick"
   ],
   "window": {
     "backgroundTextStyle": "light",

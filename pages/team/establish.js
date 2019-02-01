@@ -14,9 +14,9 @@ Page({
     datePickerIsShow: false,
     current: 'start',
     spot: '',
-    id:0,
-    name:'',
-    description:''
+    id: 0,
+    name: '',
+    description: ''
   },
   changeData: function(name, spotId) {
     this.setData({
@@ -24,28 +24,38 @@ Page({
       id: spotId
     })
   },
-  handleChangeName({ detail }) {
+  handleChangeName({
+    detail
+  }) {
 
     this.setData({
       name: detail.detail.value
     })
   },
-  handleChangeIntro({ detail }) {
+  handleChangeIntro({
+    detail
+  }) {
     this.setData({
       description: detail.detail.value
     })
   },
-  handleChangeMoney({ detail }) {
+  handleChangeMoney({
+    detail
+  }) {
     this.setData({
       money: detail.detail.value
     })
   },
-  handleChangeMin({ detail }) {
+  handleChangeMin({
+    detail
+  }) {
     this.setData({
       minimumLimit: detail.detail.value
     })
   },
-  handleChangeMax({ detail }) {
+  handleChangeMax({
+    detail
+  }) {
     this.setData({
       maximumLimit: detail.detail.value
     })
@@ -58,7 +68,7 @@ Page({
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
     var day = date.getDate();
-    var currentDateLong=Date.parse(new Date(year,month,day));
+    var currentDateLong = Date.parse(new Date(year, month, day));
     this.setData({
       startTime: `${year}年${month}月${day}日`,
       endTime: `${year}年${month}月${day}日`,
@@ -163,8 +173,8 @@ Page({
     data.average = this.data.money;
     data.intro = this.data.description;
     data.scenic = this.data.id;
-    data.startTime = this.data.startLong;
-    data.endTime = this.data.endLong;
+    data.startTime = this.data.startLong / 1000;
+    data.endTime = this.data.endLong / 1000;
     console.log(data)
     if (data.name == '') {
       wx.showToast({
@@ -173,7 +183,7 @@ Page({
         duration: 2000
       });
       return;
-    } else if (data.intro=='') {
+    } else if (data.intro == '') {
       wx.showToast({
         title: '简介不能为空',
         icon: 'none',
@@ -182,14 +192,14 @@ Page({
       return;
     }
 
-  network.POST({
-    url: api.establishTeam,
-    data: data,
-    success: res => {
-      if (res.success) {
-        wx.redirectTo({
-           url: '../schedule/schedule'
-        })
+    network.POST({
+      url: api.establishTeam,
+      data: data,
+      success: res => {
+        if (res.success) {
+          wx.redirectTo({
+            url: '../schedule/schedule'
+          })
           setTimeout(() => {
             wx.showToast({
               title: '创建成功',
@@ -197,15 +207,15 @@ Page({
               duration: 2000
             });
           }, 500);
-        
-      } else {
-        wx.showToast({
-          title: '创建失败',
-          icon: 'none',
-          duration: 5000
-        });
+
+        } else {
+          wx.showToast({
+            title: '创建失败',
+            icon: 'none',
+            duration: 5000
+          });
+        }
       }
-    }
-  })
-}
+    })
+  }
 })
