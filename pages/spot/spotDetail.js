@@ -37,7 +37,7 @@ Page({
   onLoad: function(options) {
     var id = options.id;
     network.GET({
-      url: api.getSpot + id,
+      url: api.getSpot + id + '/' + app.globalData.user.id,
       success: res => {
         if (res.success) {
           var starNum = Math.floor(res.content.star);
