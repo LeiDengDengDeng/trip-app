@@ -11,7 +11,6 @@ Page({
   data: {
     detail: '',
     current: 'tab1',
-    isForked: false,
     starNum: 3,
     emptyStarNum: 1,
     halfStar: true,
@@ -133,10 +132,12 @@ Page({
   },
 
   clickFork: function() {
+    var detail = this.data.detail;
+    detail.favorite = !detail.favorite;
     this.setData({
-      isForked: !this.data.isForked
+      detail: detail
     });
-    if (this.data.isForked) {
+    if (this.data.detail.favorite) {
       this.forkSpot(api.forkSpot, "收藏成功！","success");
     } else {
       this.forkSpot(api.cancelForkSpot, "已取消收藏！", "default");
