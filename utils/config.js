@@ -17,15 +17,15 @@ module.exports = {
     cancelForkSpot: server + "/favorite/scenic/delete",
     getForkedSpots: server + "/favorite/scenic/",
     establishTeam: server +"/team/establish",
-    getTeams: server +"/team/all",
+    getTeams: server +"/team/canJoin",
     getTeam: server +"/team/",
     getTeamMember: server +"/team/member/",
     getMyEstablishedTeam: server +"/team/my/established/",
     getMyJoinedTeam: server + "/team/my/joined/",
     joinTeam: server +"/team/join",
     quitTeam: server +"/team/quit",
-    disbandTeam: server +"/team/disband"
-
+    disbandTeam: server +"/team/disband",
+    getTeamBySpot:server+"/team/all/"
 
   }
 }

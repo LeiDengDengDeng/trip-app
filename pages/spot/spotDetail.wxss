@@ -101,3 +101,101 @@
   font-size: 24px !important;
   content: "\e73a";
 }
+
+.card2 {
+  margin: 8px;
+  height: 200rpx;
+  border: 1rpx solid #fff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffff;
+  box-shadow: 2px 1px 1px #ccc;
+}
+.card2 .spot-image {
+  margin:5px;
+  width: 200rpx;
+  height: 92%;
+  border-radius: 10rpx 0 0 10rpx;
+  flex-shrink: 0; /* 不被压缩 */
+}
+
+.card2 .right {
+  margin: 10rpx 14rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card2 .right .row {
+  display: flex;
+  flex-direction: row;
+  font-size: 11px;
+  color: #353535;
+}
+
+.card2 .right .row .title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.card2 .right .row .end {
+  font-size: 11px;
+  margin-left: auto;
+  text-align: right;
+  color: #888;
+}
+.card2 .right .row .state {
+  font-size: 11px;
+  margin-left: auto;
+  text-align: right;
+  color: #f4c23c;
+}
+
+.card2 .right .description {
+  text-align: left;
+  font-size: 11px;
+  color: #888;
+}
+
+.card2 .right .row .score {
+  margin-left: 4px;
+  color: #f4c23c;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1000160 */
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot');
+  src: url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1000160_zyykgmeyfj.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 18px;
+  padding-top: 5rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-more::before {
+  content: "\e670";
+}
+.right-item{display: none}
+.active{display:flex}
+
+.btn{
+  margin-top:8px; 
+  background-color:  #f4c23c;
+  width:95%;
+  font-size: 15px;
+  color: white;
+   vertical-align:middle ;
+   text-align: center;
+}

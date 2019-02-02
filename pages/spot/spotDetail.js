@@ -63,6 +63,52 @@ Page({
         }
       }
     });
+    network.GET({
+      url: api.getTeamBySpot + id,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.intro.length > 20) {
+              item.intro = item.intro.substring(0, 20) + "……";
+            }
+            var date = new Date(item.startTime * 1000);
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
+          }
+          this.setData({
+            list1: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
+    network.GET({
+      url: api.getTeamBySpot + id,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.intro.length > 20) {
+              item.intro = item.intro.substring(0, 20) + "……";
+            }
+            var date = new Date(item.startTime * 1000);
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
+          }
+          this.setData({
+            list2: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
   },
 
   /**
@@ -75,8 +121,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-
+  onShow: function () {
+    
   },
 
   /**
