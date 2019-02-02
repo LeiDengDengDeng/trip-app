@@ -112,7 +112,7 @@
   </i-tabs>
   <block wx:for="{{list}}">
     <navigator class="card2" url="./teamDetail?id={{item.id}}" open-type="navigate">
-      <image class="spot-image" src="../../utils/imgs/spot.jpg" />
+      <image class="spot-image" src="{{item.scenicPicUrl}}" />
       <view class='right'>
         <view class='row'>
           <view class='title'>{{item.name}}</view>

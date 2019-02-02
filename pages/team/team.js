@@ -1,6 +1,8 @@
 // pages/team/team.js
 const network = require("../../utils/network.js")
-const { api } = require("../../utils/config.js")
+const {
+  api
+} = require("../../utils/config.js")
 const app = getApp()
 Page({
 
@@ -28,14 +30,14 @@ Page({
       current_scroll: detail.key
     });
   },
-  update:function(){
+  update: function() {
     this.onLoad();
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+
   },
 
   /**
@@ -91,7 +93,7 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.onShow();
     wx.stopPullDownRefresh();
   },
