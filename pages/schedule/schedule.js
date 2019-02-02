@@ -33,6 +33,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     network.GET({
       url: api.getMyEstablishedTeam + app.globalData.user.id,
       success: res => {
@@ -42,7 +56,7 @@ Page({
               item.intro = item.intro.substring(0, 20) + "……";
             }
             var date = new Date(item.startTime * 1000);
-            item.startTime = date.getFullYear() + '年' + date.getMonth() + 1 + '月' + date.getDay() + '日';
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
           }
           this.setData({
             list1: res.content
@@ -65,7 +79,7 @@ Page({
               item.intro = item.intro.substring(0, 20) + "……";
             }
             var date = new Date(item.startTime * 1000);
-            item.startTime = date.getFullYear() + '年' + date.getMonth() + 1 + '月' + date.getDay() + '日';
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
           }
           this.setData({
             list2: res.content
@@ -79,20 +93,6 @@ Page({
         }
       }
     });
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
@@ -113,7 +113,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onShow();
+    wx.stopPullDownRefresh();
   },
 
   /**

@@ -28,34 +28,14 @@ Page({
       current_scroll: detail.key
     });
   },
-
+  update:function(){
+    this.onLoad();
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    network.GET({
-      url: api.getTeams,
-      success: res => {
-        if (res.success) {
-          for (let item of res.content) {
-            if (item.intro.length > 20) {
-              item.intro = item.intro.substring(0, 20) + "……";
-            }
-            var date = new Date(item.startTime * 1000);
-            item.startTime = date.getFullYear() + '年' + date.getMonth()+1 + '月' + date.getDay() + '日';
-          }
-          this.setData({
-            list: res.content
-          });
-        } else {
-          wx.showToast({
-            title: '查询失败',
-            icon: 'none',
-            duration: 5000
-          })
-        }
-      }
-    });
+    
   },
 
   /**
@@ -69,7 +49,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    network.GET({
+      url: api.getTeams,
+      success: res => {
+        if (res.success) {
+          for (let item of res.content) {
+            if (item.intro.length > 20) {
+              item.intro = item.intro.substring(0, 20) + "……";
+            }
+            var date = new Date(item.startTime * 1000);
+            item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
+          }
+          this.setData({
+            list: res.content
+          });
+        } else {
+          wx.showToast({
+            title: '查询失败',
+            icon: 'none',
+            duration: 5000
+          })
+        }
+      }
+    });
   },
 
   /**
@@ -89,8 +91,9 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-
+  onPullDownRefresh: function () {
+    this.onShow();
+    wx.stopPullDownRefresh();
   },
 
   /**

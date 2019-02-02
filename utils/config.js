@@ -22,7 +22,9 @@ module.exports = {
     getTeamMember: server +"/team/member/",
     getMyEstablishedTeam: server +"/team/my/established/",
     getMyJoinedTeam: server + "/team/my/joined/",
-    joinTeam: server +"/team/join"
+    joinTeam: server +"/team/join",
+    quitTeam: server +"/team/quit",
+    disbandTeam: server +"/team/disband"
 
 
   }
