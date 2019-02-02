@@ -15,7 +15,7 @@
   <block wx:else>
     <block wx:for='{{list}}' wx:key='{{item.id}}'>
       <view class='line'>
-        <image src="{{item.avator}}" class="avator"></image>
+        <image src="{{item.avatar}}" class="avator"></image>
         <text class='text vertical-middle'>{{item.name}}</text>
         <view class='vertical-middle'>
           <button wx:if='{{current=="following"}}' id="{{item.id}}" class='fork-btn vertical-middle' bindtap='cancelForkBtn'>取消关注</button>
