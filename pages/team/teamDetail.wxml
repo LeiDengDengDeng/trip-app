@@ -13,7 +13,7 @@
   <view class="description spotlink">
     <text decode="{{true}}">目的地&nbsp;&nbsp;:&nbsp;&nbsp;</text>
     <text decode="{{true}}">{{detail.scenicName}}&nbsp;&nbsp;</text>
-    <navigator url="../spot/spotDetail?id={{detial.scenicId}}" open-type='navigate' bindtap="onItemClick">
+    <navigator url="../spot/spotDetail?id={{detail.scenicId}}" open-type='navigate' bindtap="onItemClick">
       <text class="scene">景点简介</text>
       <i-icon type="play_fill" color="#f4c23c" />
     </navigator>
@@ -46,31 +46,35 @@
     <text>回程日期 : </text>
     <text>{{detail.endTime}} </text>
   </view>
-    <view class="description">
+  <view class="description">
     <text decode="{{true}}">人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数 : </text>
     <text>{{detail.minimumLimit}}-{{detail.maximumLimit}}人 </text>
   </view>
   <view class="description spotlink">
-    <text decode="{{true}}">队&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伍 :  </text>
-    <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="middle"></i-avatar>
-    <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="middle"></i-avatar>
-  <view wx:if="{{!isNotJoined}}">
+    <text decode="{{true}}">队&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伍 : &nbsp; </text>
+    <block wx:for="{{members}}" wx:key="{{item.id}}">
+    <i-avatar src="{{item.avatar}}" size="middle"></i-avatar>
+    </block>
+    <view wx:if="{{!isNotJoined}}">
       <text class="scene">加入群聊</text>
       <i-icon type="play_fill" color="#f4c23c" />
-  </view>
+    </view>
   </view>
 
 </view>
 <view wx:if="{{isNotJoined}}">
-<button class="btn join" bindtap='join'>
-<i-icon type="add" color="#fff"/>
-  申请加入
-</button>
+  <button class="btn join" bindtap='join'>
+    <i-icon type="add" color="#fff" /> 申请加入
+  </button>
 </view>
-<view wx:else="{{!isNotJoined}}">
-<button class="btn quit" bindtap='join'>
-<i-icon type="close" color="#ed3f14"/>
-  退出队伍
-</button>
+<view wx:elif="{{isLeader}}">
+  <button class="btn quit" bindtap='join'>
+    <i-icon type="close" color="#ed3f14" /> 解散队伍
+  </button>
+</view>
+<view wx:elif="{{!isNotJoined}}">
+  <button class="btn quit" bindtap='join'>
+    <i-icon type="close" color="#ed3f14" /> 退出队伍
+  </button>
 </view>
 <i-toast id="toast" />

@@ -163,6 +163,14 @@ Page({
     });
   },
   establish: function(event) {
+    if (app.globalData.user.state != "CHECKED") {
+        wx.showToast({
+          title: '未审核通过，请先审核',
+          icon: 'none',
+          duration: 2000
+        });
+      return;
+    };
     var type = this.data.type;
     var data = {};
     console.log(app.globalData)
@@ -172,10 +180,11 @@ Page({
     data.maximumLimit = this.data.maximumLimit;
     data.average = this.data.money;
     data.intro = this.data.description;
-    data.scenic = this.data.id;
+    data.scenicId = this.data.id;
     data.startTime = this.data.startLong / 1000;
     data.endTime = this.data.endLong / 1000;
     console.log(data)
+    console.log(this.data.startLong)
     if (data.name == '') {
       wx.showToast({
         title: '队伍名称不能为空',
@@ -197,9 +206,6 @@ Page({
       data: data,
       success: res => {
         if (res.success) {
-          wx.redirectTo({
-            url: '../schedule/schedule'
-          })
           setTimeout(() => {
             wx.showToast({
               title: '创建成功',
@@ -207,7 +213,9 @@ Page({
               duration: 2000
             });
           }, 500);
-
+          wx.switchTab({
+            url: '../schedule/schedule'
+          });
         } else {
           wx.showToast({
             title: '创建失败',
