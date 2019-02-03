@@ -85,8 +85,12 @@ Page({
         }
       }
     });
-    network.GET({
-      url: api.getTeamBySpot + id,
+    var data = {};
+    data.userId = app.globalData.user.id;
+    data.scenicId=id;
+    network.POST({
+      url: api.getMyEstablishedTeam ,
+      data:data,
       success: res => {
         if (res.success) {
           for (let item of res.content) {

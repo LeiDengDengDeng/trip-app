@@ -93,8 +93,7 @@
         </view>
         <view class='row'>
           <text decode='true'>队伍 :&nbsp;&nbsp;</text>
-          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
-          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small"></i-avatar>
+ <text decode='true'>{{item.memberNum}}/{{item.maximumLimit}}</text>
           <text class="iconfont icon-more end"></text>
         </view>
       </view>
@@ -102,7 +101,7 @@
   </block>
 </view>
 <navigator url="../team/establish" open-type='navigate'>
-  <button class="btn right-item {{current=='tab2'? 'active' : ''}}">
+  <button wx:if="{{current=='tab2'}}" class="btn right-item">
     <i-icon type="brush" color="#fff" /> 立即创建
   </button>
 </navigator>
