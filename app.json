@@ -13,7 +13,8 @@
     "pages/user/friend",
     "pages/user/fork",
     "pages/index/right",
-    "pages/team/spotPick"
+    "pages/team/spotPick",
+    "pages/team/user"
   ],
   "window": {
     "backgroundTextStyle": "light",

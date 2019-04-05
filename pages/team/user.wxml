@@ -1,0 +1,8 @@
+<!--pages/team/user.wxml-->
+<i-cell-group>
+    <i-cell title="姓名" value="{{userInfo.name}}"></i-cell>
+    <i-cell title="性别" value="{{userInfo.gender}}"></i-cell>
+    <i-cell title="手机号" value="{{userInfo.phone}}" ></i-cell>
+    <i-cell title="用户状态" value="{{userInfo.state}}"></i-cell>
+    <i-cell title="注册时间" value="{{userInfo.joinDate}}"></i-cell>
+</i-cell-group>

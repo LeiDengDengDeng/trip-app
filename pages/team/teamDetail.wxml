@@ -53,7 +53,9 @@
   <view class="description spotlink">
     <text decode="{{true}}">队&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伍 : &nbsp; </text>
     <block wx:for="{{members}}" wx:key="{{item.id}}">
-    <i-avatar src="{{item.avatar}}" size="middle"></i-avatar>
+      <navigator url="./user?userId={{item.id}}" open-type='navigate'>
+        <i-avatar src="{{item.avatar}}" size="middle"></i-avatar>
+     </navigator>
     </block>
     <view wx:if="{{!isNotJoined}}">
       <text class="scene">加入群聊</text>

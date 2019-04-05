@@ -101,15 +101,10 @@
   </button>
 </navigator>
 <i-panel title="出行队伍" class="panel">
+  <i-panel>
+    <i-input title="搜索" value="{{ content }}" placeholder="请输入队伍名" maxlength='15' style='text-align:left' bind:blur="search"/>
+  </i-panel>
 
-  <i-tabs current="{{ current }}" bindchange="handleChange" color="#f4c23c">
-    <i-tab key="tab1" title="附近"></i-tab>
-    <i-tab key="tab2" title="博物馆"></i-tab>
-    <i-tab key="tab3" title="公园"></i-tab>
-    <i-tab key="tab4" title="周边游"></i-tab>
-    <i-tab key="tab5" title="跨省"></i-tab>
-    <i-tab key="tab6" title="动物园"></i-tab>
-  </i-tabs>
   <block wx:for="{{list}}">
     <navigator class="card2" url="./teamDetail?id={{item.id}}" open-type="navigate">
       <image class="spot-image" src="{{item.scenicPicUrl}}" />
@@ -134,7 +129,7 @@
         </view>
         <view class='row'>
           <text decode='true'>队伍 :&nbsp;&nbsp;</text>
-<text decode='true'>{{item.memberNum}}/{{item.maximumLimit}}</text>
+          <text decode='true'>{{item.memberNum}}/{{item.maximumLimit}}</text>
           <text class="iconfont icon-more end"></text>
         </view>
 
