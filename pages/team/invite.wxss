@@ -1,0 +1,72 @@
+/* pages/team/invite.wxss */
+
+.content {
+  margin: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .line {
+  margin: 20rpx 0 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content .line .avator {
+  overflow: hidden;
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content .line .text {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 11pt;
+}
+
+.vertical-middle {
+  display: flex;
+  align-items: center;
+}
+
+.content .line .fork-btn {
+  border-radius: 30rpx;
+  font-size: 9pt;
+  color: grey;
+  padding: 0 6px 0 6px;
+  width: 140rpx;
+  height: 65rpx;
+  justify-content: center;
+  border: 2px solid;
+}
+
+.content .line .fork-btn::after {
+  border: none;
+}
+
+.divider {
+  background: #e0e3da;
+  width: 100%;
+  height: 2rpx;
+}
+
+.no-record-text {
+  text-align: center;
+  padding: 5px;
+  color: #353535;
+  font-size: 14pt;
+}
+
+.search-input {
+  border: 1rpx solid;
+  border-radius: 30rpx;
+  border-color: #888888;
+  padding: 0 30rpx;
+  flex-grow: 1;
+  font-size: 11pt;
+}

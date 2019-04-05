@@ -57,10 +57,10 @@
         <i-avatar src="{{item.avatar}}" size="middle"></i-avatar>
      </navigator>
     </block>
-    <view wx:if="{{!isNotJoined}}">
-      <text class="scene">加入群聊</text>
+    <navigator wx:if="{{!isNotJoined}}" url="./invite?type=following&&teamId={{detail.id}}" open-type="navigate">
+      <text class="scene"> 邀请好友 </text>
       <i-icon type="play_fill" color="#f4c23c" />
-    </view>
+    </navigator>
   </view>
 
 </view>
