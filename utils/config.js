@@ -26,7 +26,7 @@ module.exports = {
     joinTeam: server +"/team/join",
     quitTeam: server +"/team/quit",
     disbandTeam: server +"/team/disband",
-    getTeamBySpot:server+"/team/all/"
-
+    getTeamBySpot:server+"/team/all/",
+    searchTeam: server + "/team/search"
   }
 }

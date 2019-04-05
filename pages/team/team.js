@@ -110,5 +110,38 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  search: function(event) {
+    var keyword = event.detail.detail.value;
+    var data = { keyWord: keyword, scenicNameKeyWord: null, beforeTime:null};
+    if (keyword) {
+      network.POST({
+        url: api.searchTeam,
+        data: data,
+        success: res => {
+          if (res.success) {
+            for (let item of res.content) {
+              if (item.intro.length > 20) {
+                item.intro = item.intro.substring(0, 20) + "……";
+              }
+              var date = new Date(item.startTime * 1000);
+              item.startTime = date.getFullYear() + '年' + date.getMonth() + '月' + date.getDate() + '日';
+            }
+            this.setData({
+              list: res.content
+            });
+          } else {
+            wx.showToast({
+              title: '查询失败',
+              icon: 'none',
+              duration: 5000
+            })
+          }
+        }
+      });
+    } else {
+      this.onShow();
+    }
   }
 })
