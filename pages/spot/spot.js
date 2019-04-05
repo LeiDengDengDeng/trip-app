@@ -1,5 +1,7 @@
 const network = require("../../utils/network.js")
-const { api } = require("../../utils/config.js")
+const {
+  api
+} = require("../../utils/config.js")
 const app = getApp()
 
 Page({
@@ -12,7 +14,9 @@ Page({
     list: []
   },
 
-  handleChange({ detail }) {
+  handleChange({
+    detail
+  }) {
     this.setData({
       current: detail.key
     });
@@ -21,7 +25,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.getSetting({
       success: res => {
         if (!res.authSetting['scope.userInfo']) {
@@ -30,7 +34,7 @@ Page({
             showCancel: false,
             confirmText: '授权',
             content: '为了您更好的体验,请先同意授权',
-            success: function (res) {
+            success: function(res) {
               wx.navigateTo({
                 url: '../index/right'
               });
@@ -101,7 +105,10 @@ Page({
         })
       }
     })
+    this.getSpots();
+  },
 
+  getSpots: function() {
     network.GET({
       url: api.getSpots,
       success: res => {
@@ -128,35 +135,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.onLoad();
     wx.stopPullDownRefresh();
   },
@@ -164,14 +171,43 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
+  },
+
+  search: function(event) {
+    var keyword = event.detail.detail.value;
+    if (keyword) {
+      network.GET({
+        url: api.searchSpot + event.detail.detail.value,
+        success: res => {
+          if (res.success) {
+            for (let item of res.content) {
+              if (item.introduction.length > 20) {
+                item.introduction = item.introduction.substring(0, 20) + "……";
+              }
+            }
+            this.setData({
+              list: res.content
+            });
+          } else {
+            wx.showToast({
+              title: '查询失败',
+              icon: 'none',
+              duration: 5000
+            })
+          }
+        }
+      });
+    } else {
+      this.getSpots();
+    }
   }
 })

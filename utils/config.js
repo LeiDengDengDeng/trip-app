@@ -12,6 +12,7 @@ module.exports = {
     cancelFollowUser: server + "/friend/delete",
     uploadFile: server + "/uploadfile",
     getSpots: server + "/scenics",
+    searchSpot: server + "/scenic/search/",
     getSpot: server + "/scenic/",
     forkSpot: server + "/favorite/scenic" ,
     cancelForkSpot: server + "/favorite/scenic/delete",

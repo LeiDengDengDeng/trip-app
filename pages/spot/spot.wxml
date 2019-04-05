@@ -1,10 +1,5 @@
 <!--pages/spot/spot.wxml-->
-<i-tabs current="{{ current }}" color="#f4c23c" bindchange="handleChange">
-  <i-tab key="tab1" title="景点"></i-tab>
-  <i-tab key="tab2" title="娱乐"></i-tab>
-  <i-tab key="tab3" title="电影"></i-tab>
-  <i-tab key="tab4" title="美食"></i-tab>
-</i-tabs>
+<i-input title="搜索" value="{{ content }}" placeholder="请输入景点名字" maxlength='15' bind:blur="search"/>
 
 <block wx:for="{{list}}">
   <navigator class="card" url="./spotDetail?id={{item.id}}" open-type="navigate">
